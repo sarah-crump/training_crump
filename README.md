@@ -8,3 +8,5 @@ Training repository for the Arctic Data Center training course.
 ## Installation details
 1. Step one
 1. Step two 
+1. Step three by Walt
+1. Step four by Walt
