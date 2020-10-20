@@ -1,7 +1,7 @@
 # training_crump
 Training repository for the Arctic Data Center training course. 
 
-- Data (Sarah provides data)
+- Data (Sarah provides data and Walt will provide the other data)
 - Metadata
 - Science 
 
