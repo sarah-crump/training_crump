@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Home"
 output: html_document
 ---
 
@@ -11,4 +11,5 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Take a look at my cool work!
 
-[Data Tidying](Chapter8_CleaningManipulatingData.html)
+* [Data Tidying](Chapter8_CleaningManipulatingData.html)
+* [Cool Plots](DataVisualization.html)
