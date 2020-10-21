@@ -40,4 +40,49 @@ annual_esc <- esc %>%
   filter(Species %in% c("Sockeye", "Chum", "Coho", "Chinook", "Pink"))
 head(annual_esc)
 ```
+## Plotting
+
+```{r}
+ggplot(annual_esc, aes(x = Species, y = annual_total, fill = SASAP.Region))+
+  geom_col()+
+  theme_minimal()
+```
+
+```{r}
+kodiak_esc <- annual_esc %>% 
+  filter(SASAP.Region == "Kodiak")
+  
+my_theme <- theme_bw()+
+  theme(legend.position = "bottom")
+
+ggplot(kodiak_esc, aes(x = year, y = annual_total, color = Species))+
+  geom_line()+
+  geom_point()+
+  scale_y_continuous(labels = comma)+
+  labs(x = "Year", y = "Annual Escapement (num. fish)", title = "Kodiak Salmon Escapement")+
+  my_theme
+  
+```
+
+```{r}
+ggplot(annual_esc, aes(x = year, y = annual_total, color = Species))+
+  geom_line()+
+  geom_point()+
+  scale_y_continuous(labels = comma) +
+  facet_wrap(~SASAP.Region)+
+  labs(x = "Year", y = "Annual Escapement (num. fish)", title = "Kodiak Salmon Escapement")+
+  my_theme
+```
+
+## Interactive tables
+
+```{r}
+locations <- esc %>% 
+  distinct(Location, Latitude, Longitude) %>% 
+  drop_na()
+```
+
+```{r}
+datatable(locations)
+```
 
