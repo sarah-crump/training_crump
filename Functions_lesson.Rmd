@@ -7,6 +7,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+library(roxygen2)
+```
+
 # Example without using functions
 
 ```{r}
@@ -34,6 +38,28 @@ celsius1 == celsius4
 ```{r}
 celsius <- fahr_to_celsius(airtemps)
 celsius
+```
+
+# convert back from celsius to fahrenheit
+
+```{r}
+#' Converts Celsius to Fahrenheit
+#' 
+#' This function takes scalar or vector values in degrees Celsisu
+#' and returns values in Fahrenheit
+#'
+#' @param celsius the input temperature in degrees Celsius
+#'
+celsius_to_fahr <- function(celsius) {
+  fahr <- (celsius*9/5) + 32
+  return(fahr)
+}
+```
+
+```{r}
+result <- celsius_to_fahr(celsius)
+result
+result == airtemps
 ```
 
 
