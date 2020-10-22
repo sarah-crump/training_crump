@@ -92,7 +92,7 @@ nest_pred
 
 Plot the number of eggs predated by total predators, faceted over species. 
 
-```{r}
+```{r, fig.width=6, fig.height=12}
 ggplot(nest_pred, aes(x = pred_count, y = total_predated)) +
     geom_point() +
     facet_wrap(~common_name, scales = "free_y", ncol = 2) +
