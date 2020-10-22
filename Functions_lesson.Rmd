@@ -1,0 +1,44 @@
+---
+title: "Functions_lesson"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Example without using functions
+
+```{r}
+airtemps <- c(212, 30.3, 78, 32)
+celsius1 <- (airtemps[1]-32)*5/9
+celsius2 <- (airtemps[2]-32)*5/9
+celsius3 <- (airtemps[3]-32)*5/9
+```
+
+
+# Create a function to do the same thing
+
+```{r}
+fahr_to_celsius <- function(fahr) {
+   celsius <- (fahr-32)*5/9
+   return(celsius)
+}
+```
+
+```{r}
+celsius4 <- fahr_to_celsius(airtemps[1])
+celsius4
+celsius1 == celsius4
+```
+```{r}
+celsius <- fahr_to_celsius(airtemps)
+celsius
+```
+
+
+
+# Test function
+
+
+# Document function
